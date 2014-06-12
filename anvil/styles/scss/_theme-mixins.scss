@@ -1,0 +1,59 @@
+////////////////////////////////////
+//////         FONTS         ///////
+////////////////////////////////////
+
+@mixin font($weight:400, $style:normal){
+	font-family: "font" ,serif;
+	font-style: $style;
+	font-weight: $weight;
+}
+
+@mixin font($weight:400, $style:normal){
+	font-family: "font" ,serif;
+	font-style: $style;
+	font-weight: $weight;
+}
+
+
+///////////////////////////////////
+//////        MIXINS        ///////
+///////////////////////////////////
+
+// Button Style //
+@mixin button ( $color:white) {
+	@include ease();
+	border: none;
+	color: white;
+	cursor: pointer;
+	display: inline-block;
+	line-height: 1;
+	position: relative;
+	overflow: visible;
+
+	@if $color == white {
+
+		// Font Settings //
+		@include font-size( 16 );
+
+		// color: ;
+		text-decoration: none;
+		text-transform: none;	
+
+		// Corners, Borders, and Padding //
+		@include rounded(4px);
+		padding: 10px 15px;
+
+		// Background color and Gradient and Border //
+		background: $blue; 
+
+		&:hover {
+			// Background color and Gradient and Border //
+			background: darken($blue,10%);
+			
+		}
+	} 
+
+	&:active {
+		top: 2px;
+	}
+}

@@ -1,0 +1,28 @@
+///////////////////////////////
+//////     MEDIA Q'S     //////
+///////////////////////////////
+
+@media screen and (max-width:768px){
+	
+}
+
+@media screen and (max-width:767px){
+	// header
+	.top-banner {
+		display: none;
+	}
+
+	.menu-main-menu-container {
+		display: none;
+	}
+	
+	.mobile-trigger, .full-width-trigger {
+		display: block;
+	}
+
+	// pages
+	.site-content,
+	.widget-area {
+		@include columns(12);
+	}
+}

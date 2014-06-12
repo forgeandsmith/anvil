@@ -1,0 +1,356 @@
+//////////////////////////////////
+//////     BANNER & NAV     //////
+//////////////////////////////////
+
+// ----- top banner
+.top-banner{
+	padding-top: 20px;
+	text-align: right;
+	.social-menu {
+		display: inline-block;
+		list-style: none;
+		li {
+			display: inline-block;
+		}
+	}
+}
+
+// ----- utility menu
+.menu-utility-menu-container {
+	display: inline-block;
+}
+
+#utility-nav {
+	li {
+		+ li {
+			margin-left: 20px;
+		}
+	}
+}
+
+.site-header {
+	margin-bottom: 25px;
+}
+
+.site-branding {
+	padding-top: 4px;
+}
+
+// ----- main menu
+#site-navigation {
+	text-align: right;
+}
+
+#main-nav {
+	background: black;
+	display: inline-block;
+	font-size: 0;
+	margin: 20px 0 0;
+	padding: 0;
+	text-align: right;
+	position: relative;
+	z-index: 2;
+	> li {
+		@include inline-block;
+		background: black;
+		padding: 0;
+		vertical-align: top;
+		-webkit-transition:all 0.3s ease 0s;
+		-moz-transition:all 0.3s ease 0s;
+		-o-transition:all 0.3s ease 0s;
+		transition:all 0.3s ease 0s;
+		+ li {
+			// margin-left: 20px;
+		}
+		&:hover {
+			> .sub-menu {
+				opacity: 1;
+				-webkit-transition:all 0.5s ease 0s;
+				-moz-transition:all 0.5s ease 0s;
+				-o-transition:all 0.5s ease 0s;
+				transition:all 0.5s ease 0s;
+				visibility: visible;
+				li {
+					height: 39px; // measure your li height and make that this pixel value
+					&:hover {
+						.sub-menu {
+							opacity: 1;
+							-webkit-transition:all 0.5s ease 0s;
+							-moz-transition:all 0.5s ease 0s;
+							-o-transition:all 0.5s ease 0s;
+							transition:all 0.5s ease 0s;
+							visibility: visible;
+
+							li {
+								height: 39px;
+							}
+						}
+					}
+				}
+			}
+
+
+			> a {
+				background: $blue;
+				color: white;
+			}
+		}
+	}
+
+	a {
+		@include font-size(16);
+		@include inline-block;
+		color: white;
+		padding: 10px;
+		background: none;
+		
+		&:hover{
+			color: $blue;
+		}
+	}
+
+	.sub-menu {
+		margin: 0;
+		opacity: 0;
+		padding: 0;
+		position: absolute;
+		text-align: left;
+		-webkit-transition: all 0.25s ease 0s;
+		-moz-transition: all 0.25s ease 0s;
+		-o-transition: all 0.25s ease 0s;
+		transition: all 0.25s ease 0s;
+		visibility: hidden;
+		z-index: 1;
+		li {
+			background: black;
+			display: block;
+			position: relative;
+			-webkit-transition: all 0.5s ease 0s;
+			-moz-transition: all 0.5s ease 0s;
+			-o-transition: all 0.5s ease 0s;
+			transition: all 0.5s ease 0s;
+		}
+		li {
+			height: 0;
+		}
+		a {
+			width: 175px;
+		}
+		.sub-menu {
+			top: 0;
+			left: 100%;
+		}
+	}
+}
+
+
+// Mobile Menu
+.mobile-nav-container {
+	display: none;
+}
+
+.burger-trigger {
+	background: $blue;
+	display: none;
+	height: 65px;
+	padding-top: 4px;
+	position: absolute;
+	top: $gutter;
+	right: $gutter;
+	text-align: center;
+	text-decoration: none;
+	width: 65px;
+	span {
+		@include opacity(1);
+		@include rotation(0deg);
+		@include rounded(2px);
+		@include transition(0.1s);
+		background: white;
+		display: block;
+		height: 5px;
+		margin: 10px auto 0;
+		position: relative;
+		top: 0;
+		width: 70%;
+		transform-origin:50% 50%;
+		transform-origin:50% 50%;
+		-webkit-transform-origin:50% 50%;
+	}
+	&.open {
+		span:nth-child(1){
+			top: 15px;
+			width: 60%;
+			@include rounded(4px);
+			@include rotation(-45deg);
+		}
+		span:nth-child(2) {
+			width:0;
+		}
+		span:nth-child(3){
+			@include rotation(45deg);
+			width: 60%;
+			top: -15px;
+			@include rounded(4px);
+		}
+	}
+}
+
+.full-width-trigger {
+	display: none;
+	margin-bottom: 15px;
+	position: relative;
+	text-align: center;
+	a {
+		@include font-size(20);
+		background: $blue;
+		color: white;
+		display: block;
+		font-weight: bold;
+		padding: 20px 0;
+		text-decoration: none;
+		text-transform: uppercase;
+		&.open {
+			&:before {
+				content: 'Close ';
+			}
+			+ span {
+				transform:rotate(360deg);
+				-ms-transform:rotate(360deg);
+				-webkit-transform:rotate(360deg);
+			}
+		}
+		&:hover {
+			background: shade($blue,10%);
+		}
+	}
+}
+
+.menu-slide {
+	@include ease(0.2s);
+	@include font-size(32);
+	background: url(../../images/menu-slide.png) no-repeat;
+	color: white;
+	cursor: pointer;
+	height: 13px;
+	line-height: 1;
+	padding: 10px;
+	position: absolute;
+	top: 23px;
+	right: 5%;
+	transform:rotate(180deg);
+	-ms-transform:rotate(180deg);
+	-webkit-transform:rotate(180deg);
+	transform-origin: 50% 25%;
+	-ms-transform-origin: 50% 25%;
+	-webkit-transform-origin:50% 25%;
+	width: 21px;
+}
+
+#mobile-nav {
+	@include transition;
+	background: $blue;
+	list-style-type: none;
+	margin: 0;
+	overflow: hidden;
+	padding: 0;
+	position: relative;
+	width: 100%;
+	z-index: 5;
+
+	li {
+		@include transition;
+		position: relative;
+		text-align: center;
+		text-transform: uppercase;
+		+ li {
+			border-top: 2px solid shade($blue,10%);
+		}
+		&.call-to-action {
+			background: shade($blue, 40%);
+		}
+	}
+	a {
+		@include font-size(20);
+		color: white;
+		display: block;
+		font-weight: bold;
+		padding: 20px 0 17px;
+		&:hover {
+			background: shade($blue, 10%);
+		}
+	}
+	.menu-slide {
+		&.open {
+			// top: 23px;
+			transform:rotate(360deg);
+			-ms-transform:rotate(360deg);
+			-webkit-transform:rotate(360deg);
+		}
+	}
+	.sub-menu {
+		display: none;
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		li {
+			background: shade($blue, 20%);
+		}
+		.sub-menu {
+			li {
+				background: shade($blue, 30%);
+			}
+		}
+	}
+}
+
+.mobile-nav-container {
+	a {
+		color: white;
+		display: block;
+		text-decoration: none;
+	}
+	.contact-phone,
+	.contact-email {
+		@include font-size(20);
+		display: block;
+		font-weight: bold;
+		text-align: center;
+		text-transform: uppercase;
+		a {
+			padding: 20px 0;
+		}
+	}
+	.contact-phone {
+		background: url(../../images/icon-phone.png) no-repeat 5% center shade($blue, 10%);
+		color: white;
+		
+	}
+	.contact-email {
+		background: url(../../images/icon-email.png) no-repeat 5% center shade($blue, 20%);
+	}
+	.social-menu {
+		background: $blue;
+		
+		li {
+			padding-top: 15px;
+			text-align: center;
+			+ li {
+				border-left: 2px solid shade($blue,10%);
+			}
+		}
+		a {
+			@include font-size(42);
+		}
+	}
+	[class*="block-grid-"] {
+		margin-right: 0;
+		margin-left: 0;
+	}
+	.block-grid-2 {
+		li {
+			&:nth-of-type(2n+1) {
+				border-left: none;
+			}
+		}
+	}
+}

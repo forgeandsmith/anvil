@@ -1,0 +1,286 @@
+/////////////////////////////////
+//////     BODY STYLES     //////
+/////////////////////////////////
+
+html {
+	font-size: 100%;
+	height: 100%;
+}
+
+body {
+	color: $maintext;
+	font-size:100%;
+	height: 100%;
+	// line-height: 1.2em;
+	overflow-x: hidden;
+	position: relative;
+}
+
+::selection {
+	background: $blue;
+	color: white;
+}
+
+::-moz-selection {
+	background: $blue;
+	color: white;
+}
+
+
+////////////////////////////////
+//////     BLOCKQUOTE     //////
+////////////////////////////////
+
+blockquote {
+	border:none;
+	padding:0;
+	p {
+		// main block quote styling goes here
+		font-style: italic;
+		&:last-of-type {
+			// the block quote source goes here
+			font-style: normal;
+			font-weight: 700;
+		}
+	}
+}
+
+
+//////////////////////////
+//////     CODE     //////
+//////////////////////////
+
+pre {
+	background: #eee;
+	border: 1px solid #ccc;
+	margin: 0 0 15px;
+	padding: 20px;
+}
+
+
+///////////////////////////////////
+//////        HEADERS       ///////
+///////////////////////////////////
+
+h1, h2, h3, h4, h5, h6 {
+	font-variant-ligatures: common-ligatures;
+	a {
+		text-decoration:none;
+	}
+}
+
+h1 {
+	@include font-size(42);
+	//color: ;
+	line-height: 1;
+	margin: 0;
+	padding-bottom: 25px;
+	text-transform: uppercase;
+	a {
+		// color: ;
+		&:hover {
+			// color: ;
+		}
+	}
+}
+
+h2 {
+	@include font-size(36);
+	// color: ;
+	line-height: 1;
+	margin: 0;
+	padding-bottom: 25px;
+	text-transform: uppercase;
+	a {
+		// color: ;
+		&:hover {
+			// color: ;
+		}
+	}
+}
+
+h3 {
+	@include font-size(32);
+	// color: ;
+	line-height: 1;
+	margin: 0;
+	padding-bottom: 25px;
+	text-transform: uppercase;
+	a {
+		// color: ;
+		&:hover {
+			// color: ;
+		}
+	}
+}
+
+h4 {
+	@include font-size(24);
+	// color: ;
+	line-height: 1;
+	margin: 0;
+	padding-bottom: 25px;
+	text-transform: uppercase;
+	a {
+		// color: ;
+		&:hover {
+			// color: ;
+		}
+	}
+}
+
+h5 {
+	@include font-size(20);
+	//color: ;
+	line-height: 1;
+	margin: 0;
+	padding-bottom: 25px;
+	text-transform: uppercase;
+	a {
+		// color: ;
+		text-decoration: none;
+		&:hover{
+			// color: ;
+		}
+	}
+}
+
+h6 {
+	@include font-size(18);
+	//color: ;
+	line-height: 1;
+	margin: 0;
+	padding-bottom: 25px;
+	text-transform: uppercase;
+	a {
+		// color: ;
+		text-decoration: none;
+		&:hover{
+			// color: ;
+		}
+	}
+}
+
+
+////////////////////////////
+//////     IMAGES     //////
+////////////////////////////
+
+img {
+	max-width: 100%; 
+	height: auto; 
+
+	margin-top: 0;
+	&.alignright {
+		float: right;
+		margin-bottom: 15px;
+		margin-left: 15px;
+	}
+	&.alighnleft {
+		float: left;
+		margin-right: 15px;
+		margin-bottom: 15px;
+	}
+	&.aligncenter {
+		display: block;
+		margin-right: auto;
+		margin-left: auto;
+	}
+}
+
+
+///////////////////////////
+//////     LINKS     //////
+///////////////////////////
+
+a, a:hover {
+	@include ease();
+}
+
+// Standard Links //
+a {
+	// color: ;
+	text-decoration: underline;
+	&:hover, &:focus, &:active {
+		// color: ;
+		text-decoration: none;
+	}
+}
+
+// Button Links //
+a.button {
+	@include button();
+}
+
+// Read More Link //
+a.read-more {
+	// color: ;
+	// display:inline;
+	text-decoration: none;
+	text-transform: none;
+	&:hover{
+	//	color: ;
+	}
+}
+
+///////////////////////////
+//////     LISTS     //////
+///////////////////////////
+
+// Main List Style //
+ul {
+	list-style: disc;
+	margin: 0 0 0 15px;	
+	padding: 0 0 15px;
+	li {
+
+	}
+	a {
+		text-decoration: none;
+		&:hover {
+			
+		}
+	}
+}
+
+ol {
+	margin: 0 0 0 24px;	
+	padding: 0 0 15px;
+}
+
+.pagination {
+	list-style: none;
+	margin: 15px 0;
+	li {
+		display: inline-block;
+		margin-right: 10px;
+		&:empty {
+			display: none;
+		}
+	}
+}
+
+
+///////////////////////////////////
+//////      PARAGRAPHS      ///////
+///////////////////////////////////
+
+p {
+	margin: 0;
+	line-height: 1.5em;
+	padding-bottom: 15px;
+	&:empty {
+		display: none;
+	}
+}
+
+
+
+///////////////////////////////////
+//////     TEXT CLASSES     ///////
+///////////////////////////////////
+
+.text-center{
+	text-align: center;
+}
+
